@@ -7,10 +7,14 @@ This code has no CUDA components, so the file extension is .c and not .cu
 
 Compile on monk with:
 
-module unload compile
 module unload intel
 module load pgi
 pgcc -acc -Minfo=accel -fast saxpy_openacc.c
+
+to get timing information, define the following two variables:
+
+export ACC_NOTIFY=1
+export PGI_ACC_TIME=1
 
 */
 

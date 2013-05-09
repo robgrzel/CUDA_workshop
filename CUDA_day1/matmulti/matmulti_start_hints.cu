@@ -182,7 +182,7 @@ int main(int argc, char *argv[])
 
   gettimeofday (&tdr1, NULL);
   timeval_subtract (&restime, &tdr1, &tdr0);
-  printf ("gpu kernel and memcopy%e s\n", restime);
+  printf ("gpu kernel and memcopy%e\n", restime);
   printf ("GFlops %e\n",  (float)(n*n)*(2.0f*(float)TILE_DIM-1.0f)/restime/1000000000.0f);
 
   gettimeofday (&tdr0, NULL);
@@ -191,7 +191,7 @@ int main(int argc, char *argv[])
 
   gettimeofday (&tdr1, NULL);
   timeval_subtract (&restime, &tdr1, &tdr0);
-  printf ("cpu kernel %e s\n", restime);
+  printf ("cpu kernel %e\n", restime);
   printf ("GFlops %e\n",  (float)(n*n)*(2.0f*(float)TILE_DIM-1.0f)/restime/1000000000.0f);
 
    nerror=0; 

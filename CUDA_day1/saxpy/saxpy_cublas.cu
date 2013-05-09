@@ -85,6 +85,9 @@ int main(int argc, char *argv[])
    /* retrieve results from device (synchronous) */
    cudaMemcpy(y_shadow, y_dev, memsize, cudaMemcpyDeviceToHost);
 
+   /* guarantee synchronization */
+   cudaDeviceSynchronize();
+
    /* check results */
    nerror=0; 
    for(i=0; i < n; i++)

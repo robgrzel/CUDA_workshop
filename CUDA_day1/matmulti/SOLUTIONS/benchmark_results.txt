@@ -1,0 +1,34 @@
+Multiplying single precision matrices (16384 x 32) and (32 x 16384)
+
+Results for monk (node has 8 CPUs, 2 GPUs, only 1 GPU used for tests)
+
+-- CPU results --
+Using MKL library routine CBLAS_SGEMM  
+CPU serial - 1.310 s
+CPU threaded (8 threads) - 0.309 s
+
+Using naive matrix multiplication (compiled with nvcc -O2)
+CPU serial - 28.7 s
+
+--  GPU results --
+
+Using CUBLAS library routine cublasSgem, pinned host memory
+
+Total time (including memory copy to/from device) : 0.225 s 
+Time for kernel computation only: 0.049 s 
+
+
+Using CUDA with simple matrix multiply kernel, pinned host memory  (compile: nvcc -arch=sm_20)
+
+Total time (including memory copy to/from device) : 0.309 s
+Time for kernel computation only:  0.133 s
+
+Using CUDA with matrix multiply kernel utilizing shared memory, pinned host memory (compile: nvcc -arch=sm_20 )
+
+Total time (including memory copy to/from device) : 0.297
+Time for kernel computation only: 0.121 s
+
+
+
+
+

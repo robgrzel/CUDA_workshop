@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
    float *x_dev, *y_dev;     /* arrays for computation on device */
    float *y_shadow;          /* host-side copy of device results */
 
-   int n =32*1024;
+   int n = 32*1024;
    float alpha = 0.5f;
    int nerror;
    
@@ -182,7 +182,7 @@ int main(int argc, char *argv[])
 
    gettimeofday (&tdr1, NULL);
    timeval_subtract (&restime, &tdr1, &tdr0);
-   printf ("cpu kernel time  %e s\n", restime);
+   printf ("cpu kernel %e s\n", restime);
 
    /* check results */
    nerror=0; 

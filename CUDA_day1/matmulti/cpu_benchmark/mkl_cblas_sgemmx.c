@@ -1,8 +1,8 @@
 /*******************************************************************************
 !Adapted from Intel SDK example
-!cc mkl_cblas_sgemmx.c -Wl,--start-group -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -Wl,--end-group -lpthread -lm -o sgemm.x
+!cc mkl_cblas_sgemmx.c -L/opt/sharcnet/mkl/10.3.9/mkl/lib/intel64 -Wl,--start-group -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -Wl,--end-group -lpthread -lm -o sgemm.x
 ! with threaded libraries
-!cc mkl_cblas_sgemmx.c -Wl,--start-group -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -Wl,--end-group -lpthread -lm -liomp5 -o sgemm_threaded.x
+!cc mkl_cblas_sgemmx.c -L/opt/sharcnet/mkl/10.3.9/mkl/lib/intel64 -Wl,--start-group -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -Wl,--end-group -lpthread -lm -liomp5 -o sgemm_threaded.x
 ! a is m by k
 ! b is k by n
 ! c is m by n 

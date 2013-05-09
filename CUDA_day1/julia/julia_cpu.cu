@@ -11,6 +11,10 @@ z= z**2 + C
 
 If it converges, then the initial point z is in the Julia set.
 
+This code is CPU only but will compile with:
+
+nvcc julia_cpu.cu
+
  
 */
 
